@@ -1,21 +1,33 @@
-name: Azure Static Web Apps CI/CD
+name: Deploy MkDocs to Azure Web App
 
 on:
   push:
     branches:
-      - Dev  
+      - Dev
 
 permissions:
   id-token: write
   contents: read
 
 jobs:
-  build_and_deploy_job:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Login to Azure using the IDs we just stored
+      # 1. Set up Python Environment
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14' 
+
+      # 2. Install Dependencies and Build Site
+      - name: Build MkDocs
+        run: |
+          pip install -r requirements.txt
+          mkdocs build
+
+      # 3. Login to Azure via OIDC
       - name: 'Az CLI login'
         uses: azure/login@v2
         with:
@@ -23,12 +35,9 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      # 2. Build and Deploy to SWA
-      - name: Build And Deploy
-        uses: Azure/static-web-apps-deploy@v1
+      # 4. Deploy the "site" folder to Azure App Service
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v3
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/"
-          output_location: "site" # Where MkDocs puts the HTML
+          app-name: 'WetzelPortfolio'
+          package: 'site' # MkDocs builds the HTML into this folder by default
