@@ -12,14 +12,18 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: azureportfolio
+
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Set up Python Environment
+      # 1. Set up Python 3.14 to match your Azure Runtime
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.14' 
+          python-version: '3.14' # Matched to your App Service
 
       # 2. Install Dependencies and Build Site
       - name: Build MkDocs
@@ -40,4 +44,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'WetzelPortfolio'
-          package: 'site' # MkDocs builds the HTML into this folder by default
+          package: 'azureportfolio/site'
