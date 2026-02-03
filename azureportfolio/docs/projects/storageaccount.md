@@ -22,19 +22,19 @@ Let's talk about **Allow enabling anonymous access on individual containers**. D
 
 **Permitted scope copy** was set to the highest security level. It mandates that the source account must be on the same private network as itself.
 
-![Advanced-Security](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 130042.png)
+![Advanced-Security](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 130042.png){ width="300" }
 
 Because we are interested in just a Blob storage, we have **hierachical namespace** disabled/unchecked, which leads to SFTP and network file system v3 being unavailable. 
 
 **Cross tenant replication** is disabled. I have no interest in other tenants at this moment. 
 
-![Advanced-Security](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 130051.png)
+![Advanced-Security](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 130051.png){ width="300" }
 
 My chosen blob access tier for this project was **Hot**. I believe that the files on the website will be accessed frequently. Since I'm dumping all of my screenshots I've taken into the blob, I probably won't use a lot of them. Therefore, it may be smart to introduce lifecycle management to make those unused images turn cold.  
 
 The settings for Azure Files have been left alone since Files will not be used for this project. 
 
-![Advanced-Security](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 130100.png)
+![Advanced-Security](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 130100.png){ width="300" }
 
 
 
