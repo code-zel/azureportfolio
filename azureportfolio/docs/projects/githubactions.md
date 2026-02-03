@@ -37,7 +37,7 @@ One last thing. We need to connect our github to our **Deployment Center** in th
 ![DeploymentCenter](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 231634.png){ width="450" }
 
 
-## Using YAML to orcnhestrate deployments/pushes
+## Using YAML to orchestrate deployments/pushes
 
 The **dev_wetzelportfolio.yml** achieves the following for the project: <br>
 - Sets up Python environment <br>
@@ -104,15 +104,17 @@ On every push to the Dev branch, this YAML is triggered.
 
 After setting up mkdocs(using command **mkdocs new.**) in our project folder , C:\Users\Wetzel\Documents\Azure Website, we must also connect our local folder to our git repository. 
 
-To connect, we ensure that the terminal is working in our Azure Website folder, then run **git init**. At this point, github would display a window and ask you for login, but my account was already connected, so the window didn't appear. **git init** will create the hidden .git folder within the root of the repo. This hidden folder acts as the database structure that stores commit history and more. 
+To connect, we ensure that the VSCode terminal is working in our Azure Website folder, then run **git init**. At this point, github would display a window and ask you for login, but my account was already connected, so the window didn't appear. **git init** will create the hidden .git folder within the root of the repo. This hidden folder acts as the database structure that stores commit history and more. 
 
 From there on, when we want to push a change to our github repo, we must do the following while the terminal is working in our Azure Website folder: <br>
 
 **git add .** - Stages every new/modified/deleted file <br>
-**git commit -m "Add commit purpose here"** - Creates a permanent snapshot of the project along with a title for it <br>
-**git push -u origin Dev** - uploads the local commits to the remote repository on GitHub. **This is only supposed to run on the firs push** <br>
 
-Subsequent pushes are similar, but use **git push origin Dev** instead. 
+**git commit -m "Add commit purpose here"** - Creates a permanent snapshot of the project along with a title for it <br>
+
+**git push -u origin Dev** - uploads the local commits to the remote repository on GitHub. **This is only supposed to run on the first push** <br>
+
+*Subsequent pushes are similar, but use **git push origin Dev** instead.*
 
 Example of a successful git push and the following Github actions:
 ![Success!!](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 121448.png){ width="450" }

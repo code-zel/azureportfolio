@@ -1,6 +1,6 @@
 # Storage Strategy
 
-Use Blob storage to publicly host screenshots that are needed for documentation. Keep it low cost, keep it secure!
+    Use Blob storage to publicly host screenshots that are needed for documentation. Keep it low cost, keep it secure!
 
 ## Basics
 

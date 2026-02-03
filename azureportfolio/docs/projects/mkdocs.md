@@ -12,8 +12,8 @@ First command, ran using Bash in VSCode. This installs MkDocs. This is also incl
 **mkdocs new .**<br>
 Also ran using Bash in VSCode. This creates the mkdocs.yml file and docs folder in the same location.
 
-**mkdocs.yml**: *Your configuration file (where you'll set the site name, theme, and nav)*<br>
-**docs/**: *The folder where all your .md files (like index.md) will live.*
+    **mkdocs.yml**: *Your configuration file (where you'll set the site name, theme, and nav)*<br>
+    **docs/**: *The folder where all your .md files (like vnet.md) will live.*
 
 **mkdocs serve**<br>
 MkDocs will give you a local URL (usually http://127.0.0.1:8000/) to present your webpage. 
