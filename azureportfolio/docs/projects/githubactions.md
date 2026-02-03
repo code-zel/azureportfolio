@@ -31,64 +31,90 @@ Here are the secrets as they exist in my github repo. The .yml file is pulling f
 (screenshot 2-3 111020)
 (screenshot 2-3 110813)
 
+One last thing. We need to connect our github to our **Deployment Center** in the App Service. Super Easy. 
+
+(screenshot 2-1 231634)
+
 
 ## Using YAML to orcnhestrate deployments/pushes
 
-The **dev_wetzelportfolio.yml** achieves the following for the project:
-- Sets up Python environment 
-- Installs dependencies (requirements.txt)
-- Builds MkDocs site
-- Authenticates with Azure via OIDC
-- Deploys files to the site folder of the App Service (from Dev branch)
+The **dev_wetzelportfolio.yml** achieves the following for the project: <br>
+- Sets up Python environment <br>
+- Installs dependencies (requirements.txt) <br>
+- Builds MkDocs site <br>
+- Authenticates with Azure via OIDC <br>
+- Deploys files to the site folder of the App Service (from Dev branch)<br>
 
 On every push to the Dev branch, this YAML is triggered. 
 
 ??? note "Click to view YAML"
-name: Deploy MkDocs to Azure Web App
 
-on:
-  push:
-    branches:
-      - Dev
+    ```yaml
+    name: Deploy MkDocs to Azure Web App
 
-permissions:
-  id-token: write
-  contents: read
+    on:
+      push:
+        branches:
+          - Dev
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: azureportfolio
+    permissions:
+      id-token: write
+      contents: read
 
-    steps:
-      - uses: actions/checkout@v4
+    jobs:
+      build-and-deploy:
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: azureportfolio
 
-      # 1. Set up Python 3.14 to match Azure Runtime
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.14' 
+        steps:
+          - uses: actions/checkout@v4
 
-      # 2. Install Dependencies and Build Site
-      - name: Build MkDocs
-        run: |
-          pip install -r requirements.txt
-          mkdocs build
+          # 1. Set up Python 3.14 to match Azure Runtime
+          - name: Set up Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: '3.14' 
 
-      # 3. Login to Azure via OIDC
-      - name: 'Az CLI login'
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_APP_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          # 2. Install Dependencies and Build Site
+          - name: Build MkDocs
+            run: |
+              pip install -r requirements.txt
+              mkdocs build
 
-      # 4. Deploy the "site" folder to Azure App Service
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'WetzelPortfolio'
-          package: 'azureportfolio/site'
+          # 3. Login to Azure via OIDC
+          - name: 'Az CLI login'
+            uses: azure/login@v2
+            with:
+              client-id: ${{ secrets.AZURE_APP_ID }}
+              tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+              subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+          # 4. Deploy the "site" folder to Azure App Service
+          - name: 'Deploy to Azure Web App'
+            uses: azure/webapps-deploy@v3
+            with:
+              app-name: 'WetzelPortfolio'
+              package: 'azureportfolio/site'
+    ```
+
+## Github Workflow
+
+After setting up mkdocs(using command **mkdocs new.**) in our project folder , C:\Users\Wetzel\Documents\Azure Website, we must also connect our local folder to our git repository. 
+
+To connect, we ensure that the terminal is working in our Azure Website folder, then run **git init**. At this point, github would display a window and ask you for login, but my account was already connected, so the window didn't appear. **git init** will create the hidden .git folder within the root of the repo. This hidden folder acts as the database structure that stores commit history and more. 
+
+From there on, when we want to push a change to our github repo, we must do the following while the terminal is working in our Azure Website folder: <br>
+
+**git add .** - Stages every new/modified/deleted file <br>
+**git commit -m "Add commit purpose here"** - Creates a permanent snapshot of the project along with a title for it <br>
+**git push -u origin Dev** - uploads the local commits to the remote repository on GitHub. **This is only supposed to run on the firs push** <br>
+
+Subsequent pushes are similar, but use **git push origin Dev** instead. 
+
+Example of a successful git push and the following Github actions:
+
+(screenshot 2-3 121448)
+(screenshot 2-3 121656)
 

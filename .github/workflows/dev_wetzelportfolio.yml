@@ -19,11 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1. Set up Python 3.14 to match your Azure Runtime
+      # 1. Set up Python 3.14 to match Azure Runtime
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.14' # Matched to your App Service
+          python-version: '3.14' 
 
       # 2. Install Dependencies and Build Site
       - name: Build MkDocs
