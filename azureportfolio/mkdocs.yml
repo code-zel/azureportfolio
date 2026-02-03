@@ -4,7 +4,7 @@ theme:
   features:
     - content.code.copy 
     - content.code.annotate
-    - navigation.sections
+   ####### - navigation.sections
     - navigation.expand
     - content.tabs.link
     - layout.grid 
