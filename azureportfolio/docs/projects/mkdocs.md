@@ -1,6 +1,6 @@
 ## MKDocs
 
-MkDocs is a static site generator specifically geared toward creating project documentation. It’s written in Python and uses Markdown files for content. As someone who isn't strongly geared towards software or web development, it saved my life for this project. 
+MkDocs is a static site generator specifically geared toward creating project documentation. It’s written in Python and uses Markdown files for content. As someone who isn't strongly geared towards software or web development, it saved my life for this project. I needed a solution that would allow me to make pages that were heavy on both text and images while not having to worry hard about formatting and style. 
 
 ![MkDocs](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 004929.png){ width="450" }
 
