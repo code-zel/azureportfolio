@@ -7,5 +7,11 @@ theme:
 
 nav:
   - Home: index.md
-  - Azure Projects:
+  - How this site was made:
     - Overview: projects/index.md
+    - Creating the App Service: projects/appservice.md
+    - Creating the Storage Account: projects/storageaccount.md
+    - Creating the VNET: projects/vnet.md
+    - Setting up GitHub Actions for CI/CD: projects/githubactions.md
+    - Initializing the environment using MKDocs: projects/mkdocs.md
+    - Configuring Custom Domain and SSL: projects/custom.md
