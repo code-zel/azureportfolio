@@ -12,7 +12,7 @@ My name is Matt Wetzel. I am an **IT Support Specialist** with **3 years** of pr
 
 ## 📁 Featured Projects
 
-### [How This Site Was Made](how-this-site-was-made.md)
+### [Hosting a website with Azure App Service & Storage Account](overview.md)
 *An end-to-end look at the deployment of this MkDocs portfolio.*<br>
 * **Tech Stack:** MkDocs, Python 3.14, GitHub Actions, Azure App Service, Storage Accounts, and Virtual Networks.<br>
 
