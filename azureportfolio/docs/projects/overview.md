@@ -6,8 +6,8 @@ The App Service architecture is anchored by a zero-trust networking model that u
 
 # Services used
 
-![t](https://az-icons.com/export/icons/675ad8e4daebee40114a4fe36033257c.svg)
-![](https://az-icons.com/export/icons/ce8c231e0aac956666abed4c3e6963a2.svg)
-![](https://az-icons.com/export/icons/c60ec5d6c1d7f2a0d38687db0ab1f40a.svg)
-![](https://az-icons.com/export/icons/99ce3dea1f25b5c2a733c5b23147ad7b.svg)
-![](https://az-icons.com/export/icons/aa72f6b77e98fc1a46081d6338ee6d56.svg)
+![](https://az-icons.com/export/icons/675ad8e4daebee40114a4fe36033257c.svg){ width="150" }
+![](https://az-icons.com/export/icons/ce8c231e0aac956666abed4c3e6963a2.svg){ width="150" }
+![](https://az-icons.com/export/icons/c60ec5d6c1d7f2a0d38687db0ab1f40a.svg){ width="150" }
+![](https://az-icons.com/export/icons/99ce3dea1f25b5c2a733c5b23147ad7b.svg){ width="150" }
+![](https://az-icons.com/export/icons/aa72f6b77e98fc1a46081d6338ee6d56.svg){ width="150" }
