@@ -25,3 +25,6 @@ nav:
     - Setting up GitHub Actions for CI/CD: projects/githubactions.md
     - Initializing the environment using MKDocs: projects/mkdocs.md
     - Configuring Custom Domain and SSL: projects/custom.md
+
+markdown_extensions:
+  - attr_list
