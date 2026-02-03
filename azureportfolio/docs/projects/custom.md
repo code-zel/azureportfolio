@@ -4,7 +4,7 @@ Have visitors see the front page of my App Service when they navigate to "**wetz
 
 ## GoDaddy
 
-For this project, GoDaddy.com was used to affordably purchase and manage the DNS records the wetzelwisdom.com domain. I chose the most basic plan, for they tried to sell me a m365 domain(lol) and protection against domain theft/unwanted charges. 
+For this project, GoDaddy.com was used to affordably purchase and manage the DNS records for the wetzelwisdom.com domain. I chose the most basic plan, opting out of buying m365 domain(lol) from them and protection against domain theft/unwanted charges. 
 
 ## Configuration
 
