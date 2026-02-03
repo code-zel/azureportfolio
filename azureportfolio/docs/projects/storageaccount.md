@@ -71,6 +71,23 @@ This section is all about the worth of your files and your risk tolerance. I per
 ![Encryption](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 233344.png){ width="450" }
 
 
+## Creating a container
+
+So now that we have our blob created, we need to put in our images for the site. In order to host images, we need a **container**. 
+
+In the below screenshot, an important security setting is shown: **Anonymous access level**. By setting this option to **Blob**, I'm allowing public access only to the specific container meant for web traffic. If I were to make other containers in this storage account, they shouldn't be able to be listed.
+
+![Container](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 181318.png){ width="450" }
+
+After making the container, I went to go add my screenshots then saw an error that claims I don't have permission to list the data using my Entra account. This was resolved by creating a role assignment for the **Storage Blob Data Owner** and assigning it to myself. 
+
+![Container](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 194334.png){ width="450" }
+![Container](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 194525.png){ width="450" }
+
+## Success!
+
+![Container](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 194184.png){ width="450" }
+
 
 
 
