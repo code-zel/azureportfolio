@@ -18,7 +18,7 @@ theme:
 nav:
   - Home: index.md
   - How this site was made:
-    - Overview: projects/index.md
+    - Overview: projects/overview.md
     - Creating the App Service: projects/appservice.md
     - Creating the Storage Account: projects/storageaccount.md
     - Creating the VNET: projects/vnet.md
