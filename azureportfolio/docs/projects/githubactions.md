@@ -8,32 +8,33 @@ Github is essential to this project and many others. The benefits of automation 
 
 To begin, the folder for the project was created locally, at C:\Users\Wetzel\Documents\Azure Website. This is the folder that gets pushed to my repo. 
 
-(image of file explorer folder)
+![Files](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 104508.png){ width="450" }
 
 
 The Github repo is structured to have a **Dev** branch and a **main** branch. For now, I'm only pushing to Dev. The frontend app you're seeing at this moment is Dev. In the future, I would like main to act as a production branch, where a working copy is always to exist. 
 
-(image of repo, dev)
+
+![REPO](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 104841.png){ width="150" }
 
 
 ## OIDC and Identity Configuration
 
 To avoid the security risks associated with long-lived passwords, **OpenID Connect** was implemented for authentication. This involved creating a **App Registration** in Azure and establishing a federated identity credential
 
-(screenshot 225436)
+![DeploymentCenter](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 225436.png){ width="450" }
 
 Once the App Registration is complete, we need to get the **App ID**, the **Directory ID**, and the **Subscription ID** (found on different page) and create secrets in our github repo that reflect the expressions made in *dev_wetzelportfolio.yml*
 
-(screenshot 225155)
+![AppReg](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 225155.png){ width="450" }
 
 Here are the secrets as they exist in my github repo. The .yml file is pulling from these three keys to connect **Github Actions**
 
-(screenshot 2-3 111020)
-(screenshot 2-3 110813)
+![Secrets](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 111020.png){ width="450" }
+![Secrets](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 110813.png){ width="450" }
 
 One last thing. We need to connect our github to our **Deployment Center** in the App Service. Super Easy. 
 
-(screenshot 2-1 231634)
+![DeploymentCenter](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-01 231634.png){ width="450" }
 
 
 ## Using YAML to orcnhestrate deployments/pushes
@@ -114,7 +115,6 @@ From there on, when we want to push a change to our github repo, we must do the 
 Subsequent pushes are similar, but use **git push origin Dev** instead. 
 
 Example of a successful git push and the following Github actions:
-
-(screenshot 2-3 121448)
-(screenshot 2-3 121656)
+![Success!!](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 121448.png){ width="450" }
+![Success!!](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-03 121656.png){ width="450" }
 
