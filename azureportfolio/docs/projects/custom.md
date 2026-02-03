@@ -19,5 +19,5 @@ Once the records are created in GoDaddy, we can navigate back to the AppService'
 ![Config](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 175227.png){ width="450" }
 ![Config](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 175859.png){ width="450" }
 
-*And now, we can reach our mkdocs webpage through wetzelwisdom.com! Woohoo!*
+*And now, we can reach our Azure webpage through wetzelwisdom.com! Woohoo!*
 ![Config](https://saportfoliodev.blob.core.windows.net/images/Screenshot 2026-02-02 175922.png){ width="450" }
