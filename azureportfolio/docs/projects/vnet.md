@@ -65,3 +65,5 @@ I set this all up, verified connections, then disabled **Public network access**
 
 After some research, I gathered the understanding that this is because **the client** (aka your device, not the app) is is trying to fetch those images directly from the storage URL when the site is accessed. Not good. I had the belief that the app was fetching the images from the blob, then presenting them to you. 
 
+One strategy around this, and what I'm most considering, is to create a .py file that downloads the images from the blob locally using an App Registration. The images would be hosted in the /images folder in this repo, would would then push to the App Service whenever I push/commit to github. Build times would be much longer, but this would still ensure the blob is not public facing. 
+
