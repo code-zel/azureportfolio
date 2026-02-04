@@ -1,10 +1,10 @@
 # Network Strategy
 
-The storage account and app service must exist in their own subnets. <br>
-The storage account must be able to talk to the app service using a Private Endpoint. <br>
-The storage account must not be accessible from the internet <br>
-Network security groups must exist for each subnet and filter traffic under least-access principles. <br>
-Do this ALL without caving in and buying a FrontDoor, NAT Gateway, or any paid service.
+- The storage account and app service must exist in their own subnets. <br>
+- The storage account must be able to talk to the app service using a Private Endpoint. <br>
+- The storage account must not be accessible from the internet <br>
+- Network security groups must exist for each subnet and filter traffic under least-access principles. <br>
+- Do this ALL without caving in and buying a FrontDoor, NAT Gateway, or any paid service.
 
 ## It all begins with the VNET
 
