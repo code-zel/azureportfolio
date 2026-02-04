@@ -40,16 +40,16 @@ The second group, **NSG-Portfolio-App**, is designed with a "Deny by Default" se
 
 ## Verifying above configurations
 
-1. Let's verify the Private Endpoint Connection. We need to make sure it's **Approved** and tied to the correct subnet. Looking at the overview of our Private Endpoint, we can see it's Approved! Clicking into **PE-Portfolio-Storage-nic**, we can see it's IP address is 10.0.1.4, which matches the PE subnet. 
++  Let's verify the Private Endpoint Connection. We need to make sure it's **Approved** and tied to the correct subnet. Looking at the overview of our Private Endpoint, we can see it's Approved! Clicking into **PE-Portfolio-Storage-nic**, we can see it's IP address is 10.0.1.4, which matches the PE subnet. 
 
 (screenshot 02-03 203055)
 (screenshot 02-03 203111)
 
-2. Let's verify the app is connected to our vnet so that it can reach the private IP. We can do that by going into the Networking section of our App Service. **Outbound internet traffic** is enabled and we can see the **Subent name** shows the App subnet. Good!
++  Let's verify the app is connected to our vnet so that it can reach the private IP. We can do that by going into the Networking section of our App Service. **Outbound internet traffic** is enabled and we can see the **Subent name** shows the App subnet. Good!
 
 (screenshot 02-03 203241)
 
-3. Let's verify DNS resolution. If my app service resolves the storage URL to a public IP, it will try to go over the internet (and likely be blocked). We can verify by going to the App Service page and accessing **Advanced Tools**. From there, we can open a bash terminal and run "nslookup saportfoliodev.blob.core.windows.net". 
++ Let's verify DNS resolution. If my app service resolves the storage URL to a public IP, it will try to go over the internet (and likely be blocked). We can verify by going to the App Service page and accessing **Advanced Tools**. From there, we can open a bash terminal and run "nslookup saportfoliodev.blob.core.windows.net". 
 
 Success! It's showing the IP of **10.0.1.4**, proving the app is successfully communicating with storage over the Microsoft backbone.
 
@@ -58,4 +58,10 @@ Success! It's showing the IP of **10.0.1.4**, proving the app is successfully co
 ## A fatal mistake
 
 Remember how I said I want to do this without using a CDN, Front Door, or any service that costs money?
+
+I set this all up, verified connections, then disabled **Public network access** for my storage account. Here's what happened:
+
+(screenshot 02-03 191832)
+
+After some research, I gathered the understanding that this is because **the client** (aka your device, not the app) is is trying to fetch those images directly from the storage URL when the site is accessed. Not good. 
 
